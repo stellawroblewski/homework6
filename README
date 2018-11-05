@@ -1,0 +1,12 @@
+htree
+
+constructor defines a key, value, left, right.
+get_key and get_value return the key and value of the current tree
+get_child checks if the direction given is left and returns that pointer and if not returns the right pointer
+find checks first if the current key equals the given, then recursively parses the left tree, then the right
+path_to first asserts that the given key is in the current tree, then defines a path, then, similar to find, recursively moves through the tree, editing the path as it gets to the given key.
+the test file creates a tree of shared pointers. the is_key booleans and asserts check to see that find is returning the corrects values. child_val tests get_child and outputs the value. 
+
+
+HForest
+ class is a vector list of tree_ptr_t's and has the functions:siz, add_tree, and pop_tree. The size function uses the vector size function, the compare_trees function compares two tree ptr keys and returns true if the second is larger and false otherwise, used for the third argument of the make_heap function. add_tree uses the push_back vector function to add a new tree_ptr to the vector. pop_tree takes the first value of the list of trees (assumed to be the largest, because of make_heap), and if it does not equal nullptr, it returns that value and erases the first element of the vector. test function creates two trees (tr, tr1) and initializes and adds both trees to the forest. 
